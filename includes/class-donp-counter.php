@@ -32,13 +32,14 @@ class DONP_Counter {
 		$diff = $this->days_diff();
 
 		$html = '<span class="donp-counter ' . $this->class . '">';
-		$html .= $this->before;
-		$html .= ' ';
+		$html .= '<span class="text-before">' . $this->before . '</span>';
+		$html .= ' <span class="text-date">';
 		$html .= sprintf( _n( '1 dia', '%s dias', $diff, 'donp-counter' ), $diff );
-		$html .= ' ';
-		$html .= $this->after;
+		$html .= '</span> ';
+		$html .= '<span class="text-after">' . $this->after . '</span>';
 		$html .= '</span>';
 
 		return $html;
 	}
 }
+
